@@ -1,7 +1,7 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
-streamlit==1.36.0
-torch==2.2.2
-torchvision==0.17.2
+streamlit==1.37.0
+torch==2.5.1+cpu
+torchvision==0.20.1+cpu
 segmentation-models-pytorch==0.3.3
 Pillow==10.3.0
 numpy==1.26.4
