@@ -69,8 +69,8 @@ with st.expander("How it Works", expanded=True):
     col1_ex, col2_ex = st.columns(2)
     
     try:
-        col1_ex.image("example1.png", caption="Example Input: Your original image.", use_column_width=True)
-        col2_ex.image("example2.png", caption="Example Output: The isolated subject.", use_column_width=True)
+        col1_ex.image("example1.png", caption="Example Input: Your original image.", use_container_width=True)
+        col2_ex.image("example2.png", caption="Example Output: The isolated subject.", use_container_width=True)
     except Exception as e:
         st.warning(f"Could not load example images. Make sure 'example_input.jpg' and 'example_output.png' are in the same folder as your script.")
 
@@ -86,13 +86,13 @@ if uploaded_file is not None and model is not None:
     col1, col2 = st.columns(2)
     with col1:
         st.subheader("Original Image")
-        st.image(original_image, use_column_width=True)
+        st.image(original_image, use_container_width=True)
 
     with col2:
         st.subheader("Isolated Subject")
         with st.spinner('Processing...'):
             isolated_img = predict(model, original_image, device)
-            st.image(isolated_img, use_column_width=True)
+            st.image(isolated_img, use_container_width=True)
 
     buf = io.BytesIO()
     isolated_img.save(buf, format="PNG")
